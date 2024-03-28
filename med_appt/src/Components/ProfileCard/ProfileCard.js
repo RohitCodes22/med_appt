@@ -21,7 +21,7 @@ const ProfileCard = () => {
   const fetchUserProfile = async () => {
     try {
       const authtoken = sessionStorage.getItem("auth-token");
-      const email = sessionStorage.getItem("email"); 
+      const email = sessionStorage.getItem("email"); // Get the email from session storage
 
       if (!authtoken) {
         navigate("/login");
@@ -29,7 +29,7 @@ const ProfileCard = () => {
         const response = await fetch(`${API_URL}/api/auth/user`, {
           headers: {
             Authorization: `Bearer ${authtoken}`,
-            Email: email, 
+            Email: email, // Add the email to the headers
           },
         });
 
@@ -38,11 +38,13 @@ const ProfileCard = () => {
           setUserDetails(user);
           setUpdatedDetails(user);
         } else {
+          // Handle error case
           throw new Error("Failed to fetch user profile");
         }
       }
     } catch (error) {
       console.error(error);
+      // Handle error case
     }
   };
 
@@ -62,7 +64,7 @@ const ProfileCard = () => {
 
     try {
       const authtoken = sessionStorage.getItem("auth-token");
-      const email = sessionStorage.getItem("email"); 
+      const email = sessionStorage.getItem("email"); // Get the email from session storage
 
       if (!authtoken || !email) {
         navigate("/login");

@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const session = require('express-session');
-const UserSchema = require('../models/User');
+const UserSchema = require('../../models/User');
 const passport = require('passport');
 
 

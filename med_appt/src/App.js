@@ -1,35 +1,40 @@
-import './App.css';
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Components/Landing_Page/Landing_Page";
+import Login from "./Components/Login/Login";
+import SignUp from "./Components/Sign_Up/Sign_Up";
+import ProfileCard from "./Components/ProfileCard/ProfileCard"
+import InstantConsultation from './Components/InstantConsultation/InstantConsultation';  
+import BookingConsultation from './Components/BookingConsultation';   
+import Healthblog from './Components/Healthblog/Healthblog';      
+import SelfCheckup from './Components/SelfCheckup/SelfCheckup';    
+import Home from './Components/Home/Home';  
 import Navbar from './Components/Navbar/Navbar';
-import Landing_Page from './Components/Landing_Page/LandingPage';
-import Sign_Up from './Components/Sign_Up/Sign_Up';
-import Login from './Components/Login/Login';
-import InstantConsultation from './Components/InstantConsultationBooking/InstantConsultation';
-import FindDoctorSearchIC from './Components/FindDoctorSearchIC/FindDoctorSearchIC';
-import FindDoctorSearch from './Components/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC';
-import BookingConsultation from './Components/BookingConsultation';
 import Notification from './Components/Notification/Notification';
 
-function App() {
-  return (
-    <div className="App">
-        <BrowserRouter>
-         <Navbar/>
-         <switch>
-            <Routes>
-            <Route exact path="/" Component={Landing_Page} />
-            <Route path="/singup" Component={Sign_Up} />
-            <Route path="/login" Component={Login} />
-            <Route path="/instant-consultation" Component={ InstantConsultation } />
-            <Route path="/search/doctors" Component={FindDoctorSearch} />
-            <Route path="/notification" Component={Notification} />
-            <BookingConsultation/>
-            
-            </Routes>
-         </switch>
-        </BrowserRouter>
-    </div>
-  );
-}
 
-export default App;
+function App() {
+
+    return (
+      <div className="App">
+          <BrowserRouter>
+            <Navbar/>
+                <Routes>
+                <Route path="/" element={<Layout/>}/>
+                <Route path="/Home" element={<Home/>} />
+                <Route path="/Login" element={<Login/>}/>
+                <Route path="/SignUp" element={<SignUp/>}/>
+                <Route path="/InstantConsultation" element={<InstantConsultation/>} />
+                <Route path="/BookingConsultation" element={<BookingConsultation/>} />
+                <Route path="/Healthblog" element={<Healthblog/>} />
+                <Route path="/SelfCheckup" element={<SelfCheckup/>} />
+                <Route path="/ProfileCard" element={<ProfileCard/>}/>
+                </Routes>
+           <Notification/>
+          </BrowserRouter>
+         
+      </div>
+    );
+  }
+  
+  export default App;

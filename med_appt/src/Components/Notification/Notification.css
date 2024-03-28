@@ -1,28 +1,10 @@
 .appointment-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin-top: 16px;
-  }
-  
-  .appointment-card__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .appointment-card__title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-  
-  .appointment-card__message {
-    font-size: 16px;
-    margin-bottom: 16px;
-  }
+    padding: 1.5rem;
+    background-color: #3685fbeb;
+    color: #fff;
+    z-index: 777;
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    border-radius: 5px 5px 0 0;
+}
